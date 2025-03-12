@@ -1,0 +1,133 @@
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+    font-family: "Iansui", "cursive";
+}
+body {
+    height: 100vh;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f1f1f1;
+}
+.digital-clock {
+    color: #333;
+    font-size: 30px;
+}
+
+/* Main */
+.clock {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    font-size: 20px;
+    border-radius: 50%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    background-color: #eee;
+}
+.bars,
+.numbers {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Numbers */
+.numbers span {
+    inset: 18px;
+    position: absolute;
+    text-align: center;
+    border-radius: 50%;
+    transform: rotate(calc(var(--index) * 30deg));
+}
+.numbers span p {
+    transform: rotate(calc(var(--index) * -30deg));
+}
+
+/* Bars */
+.bars span {
+    inset: -10px;
+    position: absolute;
+    text-align: center;
+    transform: rotate(calc(var(--index) * 6deg));
+}
+.bars span p {
+    width: 1px;
+    height: 10px;
+    display: inline-block;
+    background-color: #333;
+}
+.bars span:nth-child(5n) p {
+    width: 3px;
+}
+
+/* HANDS */
+.clock-hands {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.hand {
+    display: flex;
+    position: absolute;
+    border-radius: 50%;
+    justify-content: center;
+}
+.hand i {
+    display: block;
+    border-radius: 16px;
+    transform-origin: bottom;
+}
+/* H */
+.h-hand {
+    width: 150px;
+    height: 150px;
+}
+.h-hand i {
+    width: 6px;
+    height: 75px;
+    background-color: #222;
+    transform: rotate(0deg);
+}
+/* M */
+.m-hand {
+    width: 210px;
+    height: 210px;
+}
+.m-hand i {
+    width: 4px;
+    height: 105px;
+    background-color: #555;
+    transform: rotate(0deg);
+}
+/* S */
+.s-hand {
+    width: 230px;
+    height: 230px;
+}
+.s-hand i {
+    width: 2px;
+    height: 115px;
+    background-color: #f03;
+    transform: rotate(0deg);
+}
+
+/* Center Point */
+.center-point {
+    z-index: 1;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #333;
+}
